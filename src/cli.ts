@@ -89,7 +89,6 @@ async function fetchLocationById(id: number): Promise<Location | null> {
     }
 
     const nodeUrl = location[0].node_url;
-    // Suppress linter warnings for necessary escapes in regex literal
     const urlRegex = new RegExp("github\\.com/([^/]+)/([^/]+)");
     const match = nodeUrl.match(urlRegex);
 
