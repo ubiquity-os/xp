@@ -17,7 +17,7 @@ on:
         type: string
 
 jobs:
-  run-knip:
+  calculate-xp:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
