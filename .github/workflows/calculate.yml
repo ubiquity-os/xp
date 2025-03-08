@@ -9,11 +9,11 @@ on:
         type: string
       org:
         description: "GitHub Organization"
-        required: true
+        required: false
         type: string
       repo:
         description: "GitHub Repository"
-        required: true
+        required: false
         type: string
 
 jobs:
