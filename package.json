@@ -1,6 +1,9 @@
 {
   "name": "xp",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "bin": {
+    "xp-cli": "./src/cli.ts"
+  },
   "description": "Ubiquity XP System.",
   "main": "build/index.ts",
   "author": "Ubiquity DAO",

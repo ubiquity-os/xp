@@ -1,3 +1,5 @@
+#!/usr/bin/env bun
+
 import { createClient } from "@supabase/supabase-js";
 import { BigNumber } from "@ethersproject/bignumber";
 import yargs from "yargs";
@@ -162,7 +164,7 @@ function calculateXpFromPermits(permits: SupabasePermit[]): number {
 }
 
 // CLI configuration
-// eslint-disable-next-line sonarjs/void-use
+ 
 void yargs(hideBin(process.argv))
   .command(
     "calculate",
