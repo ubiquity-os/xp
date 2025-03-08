@@ -88,8 +88,7 @@ async function fetchLocationById(id: number): Promise<Location | null> {
     }
 
     const nodeUrl = location[0].node_url;
-    // eslint-disable-next-line no-useless-escape, sonarjs/unnecessary-character-escapes
-    const urlRegex = /github\.com\/([^\/]+)\/([^\/]+)/;
+    const urlRegex = new RegExp("github\\.com\\/([^\\/]+)\\/([^\\/]+)");
     const match = nodeUrl.match(urlRegex);
 
     if (!match || match.length < 3) {
