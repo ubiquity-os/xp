@@ -146,7 +146,7 @@ async function calculateXp(username: string, org?: string, repo?: string): Promi
     const xp = calculateXpFromPermits(permits);
     console.log(`User: ${username}`);
     if (org && repo) {
-      console.log(`Repository (${repo}) XP: ${xp}`);
+      console.log(`Repository (${org}/${repo}) XP: ${xp}`);
     } else if (org) {
       console.log(`Organization (${org}) XP: ${xp}`);
     } else {
@@ -164,7 +164,7 @@ function calculateXpFromPermits(permits: SupabasePermit[]): number {
 }
 
 // CLI configuration
- 
+
 void yargs(hideBin(process.argv))
   .command(
     "calculate",
