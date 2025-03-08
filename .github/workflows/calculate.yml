@@ -32,7 +32,7 @@ jobs:
         run: bun install
 
       - name: Run CLI
-        run: bun src/cli.ts --user=${{ github.event.inputs.username }} --org=${{ github.event.inputs.org }} --repo=${{ github.event.inputs.repo }}
+        run: bun src/cli.ts calculate --user=${{ github.event.inputs.username }} --org=${{ github.event.inputs.org }} --repo=${{ github.event.inputs.repo }}
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
