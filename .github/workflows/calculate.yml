@@ -1,0 +1,35 @@
+name: Calculate XP
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'GitHub Username'
+        required: true
+        type: string
+      org:
+        description: 'GitHub Organization'
+        required: true
+        type: string
+      repo:
+        description: 'GitHub Repository'
+        required: true
+        type: string
+
+jobs:
+  calculate-xp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run CLI
+        run: bun src/cli.ts --user=${{ github.event.inputs.username }} --org=${{ github.event.inputs.org }} --repo=${{ github.event.inputs.repo }}
